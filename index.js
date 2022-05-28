@@ -13,6 +13,9 @@ const certificate = require("./routes/certificaterequest/certificateroute");
 const user = require("./routes/userrequest/userroute");
 const morgan = require('morgan');
 
+//path manager
+const path = require('path');
+
 //set the port of our server
 app.set("PORT", process.env.PORT || 3100);
 
@@ -23,7 +26,7 @@ app.use(fileupload({ createParentPath: true }))
 app.use(morgan("dev"))
 app.use(cors({
     credentials: true
-    , origin: ['http://localhost:3000', 'http://192.168.0.15:3000']
+    , origin: ['http://localhost:3000', 'http://192.168.0.15:3000','https://miguel-huayhua.netlify.app']
 }))
 app.use(cookieParser("miguelmikeh"));
 
@@ -35,6 +38,12 @@ app.get('/', (req, res) => {
 
     res.sendFile(__dirname + '/logo.png')
 })
+
+app.get('/website/myself', (req, res) => {
+    res.sendFile(path.join(__dirname, 'static', 'website', 'myself.jpg'));
+})
+
+
 //connect with the enviroment port 3100
 app.listen(app.get("PORT"), () => {
     console.log(`Listen to port ${app.get("PORT")}`);

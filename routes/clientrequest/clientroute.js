@@ -1,5 +1,5 @@
 const express = require('express');
-const { addNewClient, loadClient, deleteCustomer } = require('../../database/crud/clientcrud');
+const { addNewClient, loadClient, deleteCustomer } = require('../../database/crud/custormercrud');
 const router = express.Router();
 const { ObjectId } = require('mongodb');
 
