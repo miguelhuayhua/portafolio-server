@@ -4,7 +4,7 @@
   "description": "servidor del portafolio de miguel huayhua",
   "main": "index.js",
   "scripts": {
-    "start": "npm index.js",
+    "start": "node index.js",
     "test": "nodemon index.js"
   },
   "author": "miguel huayhua",
