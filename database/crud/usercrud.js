@@ -24,7 +24,7 @@ const getOneUser = async (data) => {
     const user = getData(users, data).then(user => {
         return user;
     }).catch(() => {
-        return false;
+        return false;   
     })
     return user;
 }
